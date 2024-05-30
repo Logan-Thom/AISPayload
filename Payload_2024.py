@@ -19,7 +19,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(ARMING_SWITCH_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 # Data logging setup
-data_log_path = '/payload/flight_data.csv'
+data_log_path = '~/Payload/flight_data.csv'
 data_columns = ['timestamp', 'temperature', 'accel_x', 'accel_y', 'accel_z']
 data_log = []
 
@@ -64,8 +64,8 @@ def main():
         while True:
             if is_system_armed():
                 # Start recording video
-                h264_path = '/Payload/Flight/Footage.h264'
-                mp4_path = '/Payload/Flight/Footage.mp4'
+                h264_path = '~/Payload/Flight/Footage.h264'
+                mp4_path = '~/Payload/Flight/Footage.mp4'
                 
                 camera.start_recording(h264_path)
                 print("Recording started.")
